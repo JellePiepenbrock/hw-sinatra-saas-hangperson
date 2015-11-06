@@ -82,7 +82,12 @@ class HangpersonApp < Sinatra::Base
   
   get '/lose' do
     ### YOUR CODE HERE ###
+    unless @game.check_win_or_lose == :lose
+      redirect '/show'
+    
     erb :lose # You may change/remove this line
+    end
+    
   end
   
 end
